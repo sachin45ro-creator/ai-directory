@@ -15,6 +15,9 @@ export const metadata = {
   title: 'PureAI Directory - Find the Best AI Tools',
   description: 'Explore the ultimate directory of market-leading AI tools, complete with pricing, versions, and ratings.',
   keywords: ['PureAI Directory', 'AI tools', 'AI directory', 'ChatGPT', 'Claude'],
+  verification: {
+    google: 'google9a03a063d1422a4b', // <-- Paste your exact code string here
+  },
 };
 
 export default function RootLayout({
