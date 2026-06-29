@@ -80,6 +80,23 @@ export default function Home() {
             </div>
           ))}
         </div>
+        {/* Explore Categories Section */}
+        <div className="max-w-5xl mx-auto px-6 mb-16">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Explore Categories</h2>
+              <p className="text-blue-100 max-w-xl text-sm md:text-base">
+                Dive deep into specialized AI tool directories. Filter through development assistants, design visualizers, video engines, and automation frameworks seamlessly.
+              </p>
+            </div>
+            <a 
+              href="/categories" 
+              className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-semibold shadow transition-all duration-200 whitespace-nowrap text-sm"
+            >
+              Browse All Categories &rarr;
+            </a>
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
@@ -87,5 +104,6 @@ export default function Home() {
         &copy; {new Date().getFullYear()} PureAI Directory. Built for simplicity.
       </footer>
     </div>
+
   );
 }
