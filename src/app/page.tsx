@@ -1,5 +1,4 @@
-import React from 'react';
-
+import Image from 'next/image';
 const aiTools = [
   { name: 'Gemini', developer: 'Google', description: 'Exceptional for coding assistance, logic, and processing massive amounts of text or file context at once.', link: 'https://gemini.google.com' },
   { name: 'DeepSeek R1', developer: 'DeepSeek', description: 'An incredibly powerful open-weights reasoning model specializing in complex math, logic, and deep code debugging.', link: 'https://deepseek.com' },
@@ -15,7 +14,13 @@ export default function Home() {
       {/* Header */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold tracking-tight text-indigo-600">PureAI Directory</h1>
+         <Image 
+            src="/logo.png" 
+            alt="PureAI Directory Logo" 
+            width={90} 
+            height={25} 
+            className="object-contain"
+          />
           <span className="text-xs bg-gray-100 px-3 py-1 rounded-full text-gray-500 font-medium">100% Free & Ad-Free</span>
         </div>
       </header>
