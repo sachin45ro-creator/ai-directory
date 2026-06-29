@@ -16,7 +16,7 @@ export const metadata = {
   description: 'Explore the ultimate directory of market-leading AI tools, complete with pricing, versions, and ratings.',
   keywords: ['PureAI Directory', 'AI tools', 'AI directory', 'ChatGPT', 'Claude'],
   verification: {
-    google: 'google9a03a063d1422a4b', // <-- Paste your exact code string here
+    google: '6e2wZl3hKJqCzedG5XRuWvC6ZGnvCXWLPftJGHCAlr8', // <-- Paste your exact code string here
   },
 };
 
@@ -33,7 +33,4 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
-  verification: {
-    google:'6e2wZl3hKJqCzedG5XRuWvC6ZGnvCXWLPftJGHCAlr8', 
-  },
 }
