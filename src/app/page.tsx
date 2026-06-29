@@ -1,3 +1,5 @@
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 const aiTools = [
   { name: 'Gemini', developer: 'Google', description: 'Exceptional for coding assistance, logic, and processing massive amounts of text or file context at once.', link: 'https://gemini.google.com' },
@@ -9,6 +11,13 @@ const aiTools = [
 ];
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredTools = aiTools.filter((tool) =>
+    tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    tool.developer.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    tool.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       {/* Header */}
@@ -30,6 +39,15 @@ export default function Home() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-4xl font-extrabold tracking-tight mb-4 sm:text-5xl text-gray-900">
             Find the perfect AI tool instantly.
+            <div className="max-w-md mx-auto mt-8 mb-12">
+          <input
+            type="text"
+            placeholder="Search for AI tools, developers, or features..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm transition-all text-sm bg-white"
+          />
+        </div>
           </h2>
           <p className="text-lg text-gray-600">
             A clean, clutter-free index of top-tier AI models and systems to help you build, create, or learn.
@@ -38,7 +56,7 @@ export default function Home() {
 
         {/* Directory Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {aiTools.map((tool) => (
+          {filteredTools.map((tool) => (
             <div key={tool.name} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="flex items-start justify-between mb-2">
